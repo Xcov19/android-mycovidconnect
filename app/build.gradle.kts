@@ -13,13 +13,14 @@ android {
     android.buildFeatures.viewBinding = true
 
     defaultConfig {
-        applicationId = "com.ht117.yukute"
+        applicationId = Deps.App.Id
         minSdkVersion(Deps.App.minSdk)
         targetSdkVersion(Deps.App.targetSdk)
         versionCode = Deps.App.VersionCode
         versionName = Deps.App.VersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        resValue("string", "app_name", Deps.App.Name)
     }
 
     compileOptions {
@@ -34,11 +35,17 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            resValue("string", "google_maps_key", Deps.Google.ReleaseKey)
         }
+
+        getByName("debug") {
+            resValue("string", "google_maps_key", Deps.Google.DebugKey)
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -56,6 +63,8 @@ dependencies {
 
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
+    implementation(Deps.Google.Map)
+    implementation(Deps.Common.Ssp)
 
     implementation(Deps.Room.Room)
     kapt(Deps.Room.RoomCompiler)

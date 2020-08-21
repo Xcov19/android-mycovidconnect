@@ -2,7 +2,67 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/app_graph.xml">
+    android:id="@+id/app_graph.xml"
+    app:startDestination="@id/landing">
 
+    <fragment
+        android:id="@+id/landing"
+        android:name="com.ht117.yukute.ui.screen.landing.LandingFragment"
+        tools:layout="@layout/fragment_landing">
+
+        <action android:id="@+id/navigate_to_map"
+            app:destination="@id/map"/>
+
+        <action
+            android:id="@+id/navigate_to_login"
+            app:destination="@id/login"/>
+
+        <action
+            android:id="@+id/navigate_to_signup"
+            app:destination="@id/signup"/>
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.ht117.yukute.ui.screen.home.HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.ht117.yukute.ui.screen.map.MapFragment"
+        tools:layout="@layout/fragment_map"/>
+
+    <fragment
+        android:id="@+id/about"
+        android:name="com.ht117.yukute.ui.screen.about.AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/contact"
+        android:name="com.ht117.yukute.ui.screen.contact.ContactFragment"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/faqs"
+        android:name="com.ht117.yukute.ui.screen.faq.FaqFragment"
+        tools:layout="@layout/fragment_faq"/>
+
+    <fragment
+        android:id="@+id/get_started"
+        android:name="com.ht117.yukute.ui.screen.getstarted.GetStartedFragment"
+        tools:layout="@layout/fragment_get_started"/>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.ht117.yukute.ui.screen.login.LoginFragment"
+        tools:layout="@layout/fragment_login"/>
+
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.ht117.yukute.ui.screen.signup.SignupFragment"
+        tools:layout="@layout/fragment_signup"/>
 
 </navigation>

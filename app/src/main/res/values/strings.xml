@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Yukute</string>
+    <string name="about">About</string>
+    <string name="contact">Contact us</string>
+    <string name="faqs">FAQs</string>
+    <string name="get_started">Get Started</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="sos">SOS</string>
+    <string name="find_hospital">Find hospital\nnear me</string>
 </resources>
