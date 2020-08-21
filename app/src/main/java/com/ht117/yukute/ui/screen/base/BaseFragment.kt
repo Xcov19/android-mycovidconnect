@@ -2,7 +2,9 @@ package com.ht117.yukute.ui.screen.base
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 abstract class BaseFragment(layoutId: Int): Fragment(layoutId) {
 
@@ -25,5 +27,9 @@ abstract class BaseFragment(layoutId: Int): Fragment(layoutId) {
     override fun onStop() {
         super.onStop()
         cleanUp()
+    }
+
+    fun navigateTo(destination: Int, args: Bundle = bundleOf()) {
+        findNavController().navigate(destination, args)
     }
 }

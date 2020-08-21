@@ -1,4 +1,2 @@
-include(":data")
-include(":domain")
-include(":app")
+include(":data", ":domain", ":app")
 rootProject.name = "Yukute"
