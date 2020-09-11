@@ -7,4 +7,6 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="sos">#F25C05</color>
+
+    <color name="text">#0455BF</color>
 </resources>

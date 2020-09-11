@@ -6,6 +6,7 @@ import android.view.Gravity
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -14,20 +15,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.ht117.yukute.R
 import com.ht117.yukute.ui.hasPermission
-import com.ht117.yukute.ui.screen.base.BaseFragment
-import com.ht117.yukute.ui.screen.base.IAction
-import com.ht117.yukute.ui.screen.base.IState
-import com.ht117.yukute.ui.screen.base.IView
+import com.ht117.yukute.ui.screen.base.*
 import kotlinx.android.synthetic.main.fragment_landing.*
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-data class LandingState(val isLoading: Boolean = false): IState
-sealed class LandingAction: IAction {
-    object CheckAuthorize: LandingAction()
+data class LandingState(val isLoading: Boolean = false) : IState
+sealed class LandingAction : IAction {
+    object CheckAuthorize : LandingAction()
 }
 
-class LandingFragment: BaseFragment(R.layout.fragment_landing), IView<LandingState> {
+class LandingFragment : BaseFragment(R.layout.fragment_landing), IView<LandingState> {
 
     private val viewModel: LandingViewModel by viewModel()
 
@@ -62,8 +60,7 @@ class LandingFragment: BaseFragment(R.layout.fragment_landing), IView<LandingSta
             if (requireContext().hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
                 navigateTo(R.id.navigate_to_map)
             } else {
-                // TODO show dialog request
-                //requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOC_REQ)
+                requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOC_REQ)
             }
         }
 
@@ -99,11 +96,19 @@ class LandingFragment: BaseFragment(R.layout.fragment_landing), IView<LandingSta
             if (grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // TODO ok
             } else {
-                // TODO User reject
+                if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
+                    showRationaleDialog()
+                }
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
+    }
+
+    private fun showRationaleDialog() {
+        LocationRationaleDialog().show(childFragmentManager, "rationale")
+        //requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOC_REQ)
+
     }
 
     companion object {
