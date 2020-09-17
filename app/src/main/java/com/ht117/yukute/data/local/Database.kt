@@ -1,9 +1,9 @@
-package com.ht117.yukute.data
+package com.ht117.yukute.data.local
 
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.ht117.yukute.data.dao.UserDao
-import com.ht117.yukute.data.model.User
+import com.ht117.yukute.data.local.dao.UserDao
+import com.ht117.yukute.data.local.model.User
 
 @androidx.room.Database(
     entities = [

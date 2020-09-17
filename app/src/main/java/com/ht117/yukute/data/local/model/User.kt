@@ -1,4 +1,4 @@
-package com.ht117.yukute.data.model
+package com.ht117.yukute.data.local.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

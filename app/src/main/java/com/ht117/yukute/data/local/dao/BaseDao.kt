@@ -1,4 +1,4 @@
-package com.ht117.yukute.data.dao
+package com.ht117.yukute.data.local.dao
 
 import androidx.room.Delete
 import androidx.room.Insert

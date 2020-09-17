@@ -1,4 +1,4 @@
-package com.ht117.yukute.data
+package com.ht117.yukute.data.local
 
 import androidx.room.TypeConverter
 import java.util.*
