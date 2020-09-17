@@ -9,13 +9,20 @@ object Version {
     const val NavUiKtx = "2.3.0"
     const val Koin = "2.1.6"
     const val LeakCanary = "2.4"
+    const val crashlytics = "17.2.1"
     const val Retrofit = "2.9.0"
     const val Moshi = "1.9.3"
     const val Interceptor = "4.8.0"
     const val Timber = "4.7.1"
+    const val Stetho = "1.5.1"
     const val Room = "2.2.5"
     const val Serialize = "0.20.0"
     const val Prefs = "1.1.1"
+
+    //Networking
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.8.1"
+    const val loggingInterceptor = "4.8.1"
 
     const val Junit = "4.13"
     const val ExtJunit = "1.1.1"

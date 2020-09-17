@@ -6,16 +6,16 @@ object Deps {
         const val Library = "com.android.library"
         const val KotlinAndroid = "kotlin-android"
         const val KotlinExt = "kotlin-android-extensions"
-        const val KotlinKapt = "kotlin-kapt"
+        const val kapt = "kotlin-kapt"
         const val JavaLib = "java-library"
         const val Kotlin = "kotlin"
     }
 
     object App {
         const val minSdk = 23
-        const val compileSdk = 29
-        const val targetSdk = 29
-        const val buildTools = "29.0.3"
+        const val compileSdk = 30
+        const val targetSdk = 30
+        const val buildTools = "30.0.0"
         const val VersionCode = 1
         const val VersionName = "1.0"
     }
@@ -23,7 +23,8 @@ object Deps {
     object Kt {
         const val StdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Version.kt}"
         const val StdJdk = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kt}"
-        const val Serialize = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Version.Serialize}"
+        const val Serialize =
+            "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Version.Serialize}"
     }
 
     object Androidx {
@@ -42,8 +43,12 @@ object Deps {
 
     object Common {
         val FileTree = mapOf("dir" to "libs", "include" to listOf("*.jar"))
-        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:${Version.LeakCanary}"
-        const val Timber = "com.jakewharton.timber:timber:${Version.Timber}"
+        const val timber = "com.jakewharton.timber:timber:${Version.Timber}"
+        const val stetho = "com.facebook.stetho:stetho:${Version.Stetho}"
+        const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Version.LeakCanary}"
+
+        // Firebase
+        const val crashlytics = "com.google.firebase:firebase-crashlytics:${Version.crashlytics}"
     }
 
     object Koin {
@@ -52,12 +57,18 @@ object Deps {
         const val ViewModel = "org.koin:koin-androidx-viewmodel:${Version.Koin}"
     }
 
+    object Room {
+        const val RoomRuntime = "androidx.room:room-runtime:${Version.Room}"
+        const val Room = "androidx.room:room-ktx:${Version.Room}"
+        const val RoomCompiler = "androidx.room:room-compiler:${Version.Room}"
+    }
+
     object Network {
-        const val Retrofit = "com.squareup.retrofit2:retrofit:${Version.Retrofit}"
-        const val Moshi = "com.squareup.moshi:moshi:${Version.Moshi}"
-        const val MoshiGen = "com.squareup.moshi:moshi-kotlin-codegen:${Version.Moshi}"
-        const val Logger = "com.squareup.okhttp3:logging-interceptor:${Version.Interceptor}"
-        const val Converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
+        const val gson = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
+        const val ohttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
+        const val loggingInterceptor =
+            "com.squareup.okhttp3:logging-interceptor:${Version.loggingInterceptor}"
     }
 
     object Test {
