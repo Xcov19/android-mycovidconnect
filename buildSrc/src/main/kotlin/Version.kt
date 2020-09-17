@@ -19,6 +19,11 @@ object Version {
     const val Serialize = "0.20.0"
     const val Prefs = "1.1.1"
 
+    //Networking
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.8.1"
+    const val loggingInterceptor = "4.8.1"
+
     const val Junit = "4.13"
     const val ExtJunit = "1.1.1"
     const val Espresso = "3.2.0"

@@ -64,12 +64,11 @@ object Deps {
     }
 
     object Network {
-        const val Retrofit = "com.squareup.retrofit2:retrofit:${Version.Retrofit}"
-        const val Moshi = "com.squareup.moshi:moshi:${Version.Moshi}"
-        const val MoshiGen = "com.squareup.moshi:moshi-kotlin-codegen:${Version.Moshi}"
-        const val Logger = "com.squareup.okhttp3:logging-interceptor:${Version.Interceptor}"
-        const val Converter =
-            "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
+        const val gson = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
+        const val ohttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
+        const val loggingInterceptor =
+            "com.squareup.okhttp3:logging-interceptor:${Version.loggingInterceptor}"
     }
 
     object Test {
