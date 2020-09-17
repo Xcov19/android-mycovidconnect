@@ -54,9 +54,8 @@ dependencies {
 
     implementation(Deps.Common.leakCanary)
     implementation(Deps.Common.stetho)
+    implementation(Deps.Common.timber)
     implementation(Deps.Common.crashlytics)
-
-    implementation(project(":data"))
 
     testImplementation(Deps.Test.JUnit4)
     androidTestImplementation(Deps.Test.ExtJunit)
