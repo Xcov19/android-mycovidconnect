@@ -11,3 +11,13 @@ desc "Runs on any branch"
 lane :branch do |options|
     build
 end
+
+desc "Runs on develop branch"
+lane :develop do |options|
+    build
+end
+
+desc "Runs on master branch"
+lane :release do |options|
+    build
+end
