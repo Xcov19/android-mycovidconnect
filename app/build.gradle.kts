@@ -64,6 +64,7 @@ dependencies {
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
     implementation(Deps.Google.Map)
+    implementation(Deps.Google.Location)
     implementation(Deps.Common.Ssp)
 
     implementation(Deps.Room.Room)
