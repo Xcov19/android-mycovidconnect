@@ -56,7 +56,6 @@ private val networkingModule: Module = module {
 val apiModule: Module = module {
     single<YakuteAPI> { get<Retrofit>().create() }
 }
-
 val settingsModule: Module = module {
 
     single {
