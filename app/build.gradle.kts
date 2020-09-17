@@ -57,6 +57,11 @@ dependencies {
     implementation(Deps.Common.timber)
     implementation(Deps.Common.crashlytics)
 
+    implementation(Deps.Network.retrofit)
+    implementation(Deps.Network.ohttp)
+    implementation(Deps.Network.loggingInterceptor)
+    implementation(Deps.Network.gson)
+
     testImplementation(Deps.Test.JUnit4)
     androidTestImplementation(Deps.Test.ExtJunit)
     androidTestImplementation(Deps.Test.Espresso)
