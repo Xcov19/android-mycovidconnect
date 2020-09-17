@@ -7,5 +7,5 @@ dependencies {
     implementation(fileTree(Deps.Common.FileTree))
     implementation(Deps.Kt.StdJdk)
     api(Deps.Koin.Core)
-    api(Deps.Common.Timber)
+    api(Deps.Common.timber)
 }

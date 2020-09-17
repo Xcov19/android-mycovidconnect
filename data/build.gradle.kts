@@ -2,7 +2,7 @@ plugins {
     id(Deps.Plugins.Library)
     id(Deps.Plugins.KotlinAndroid)
     id(Deps.Plugins.KotlinExt)
-    id(Deps.Plugins.KotlinKapt)
+    id(Deps.Plugins.kapt)
 }
 
 android {
