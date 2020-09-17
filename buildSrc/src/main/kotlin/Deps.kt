@@ -13,9 +13,9 @@ object Deps {
 
     object App {
         const val minSdk = 23
-        const val compileSdk = 29
-        const val targetSdk = 29
-        const val buildTools = "29.0.3"
+        const val compileSdk = 30
+        const val targetSdk = 30
+        const val buildTools = "30.0.0"
         const val VersionCode = 1
         const val VersionName = "1.0"
     }
