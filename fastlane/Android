@@ -44,11 +44,6 @@ end
 
 
 def read_gradle_properties(env)
-    _mavenGradleCredentialsProperties = {
-        "artifactsRepoUrl" => @configuration['artifactsRepoUrl'],
-        "artifactsRetailRepoUrl" => @configuration['artifactsRetailRepoUrl'],
-        "artifactsIdentityRepoUrl" => @configuration['artifactsIdentityRepoUrl']
-    }
 
     puts "Reading gradle properties for env: #{env}"
     @configuration = @configuration["configurations"].detect{ |item| item["name"] == env }
@@ -63,5 +58,5 @@ def read_gradle_properties(env)
         "appLabel" => @configuration['app_name'],
     }
 
-    @gradleProperties = _gradleProperties.merge(_mavenGradleCredentialsProperties)
+    @gradleProperties = _gradleProperties
 end
