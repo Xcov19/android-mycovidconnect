@@ -1,7 +1,7 @@
-package com.ht117.yukute.ui
+package com.ht117.yukute.ui.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.ht117.yukute.R
 
 class MainActivity : AppCompatActivity() {
