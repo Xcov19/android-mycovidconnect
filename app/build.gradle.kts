@@ -2,11 +2,15 @@ plugins {
     id(Deps.Plugins.Application)
     id(Deps.Plugins.KotlinAndroid)
     id(Deps.Plugins.KotlinExt)
+    id(Deps.Plugins.kapt)
 }
 
 android {
     compileSdkVersion(Deps.App.compileSdk)
     buildToolsVersion(Deps.App.buildTools)
+
+    android.buildFeatures.dataBinding = true
+    android.buildFeatures.viewBinding = true
 
     defaultConfig {
         applicationId = "com.ht117.yukute"
@@ -21,8 +25,17 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
+    }
+}
+
+kapt {
+    arguments {
+        arg("room.incremental", "true")
     }
 }
 
@@ -34,6 +47,14 @@ dependencies {
 
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
+
+    implementation(Deps.Room.Room)
+    kapt(Deps.Room.RoomCompiler)
+    implementation(Deps.Room.RoomRuntime)
+
+    implementation(Deps.Common.leakCanary)
+    implementation(Deps.Common.stetho)
+    implementation(Deps.Common.crashlytics)
 
     implementation(project(":data"))
 
