@@ -40,6 +40,7 @@ dependencies {
     kapt(Deps.Androidx.RoomCompiler)
     implementation(Deps.Androidx.RoomKt)
     implementation(Deps.Androidx.Prefs)
+    implementation(Deps.Google.Location)
 
     api(project(":domain"))
 
