@@ -1,8 +1,7 @@
-package com.ht117.data.location
+package com.ht117.yukute.location
 
 import android.content.SharedPreferences
-import com.ht117.domain.location.LocationDataSource
-import com.ht117.domain.location.model.LocationModel
+import com.ht117.yukute.location.model.LocationModel
 
 class LocationLocalDataSource(val prefs: SharedPreferences) : LocationDataSource {
 

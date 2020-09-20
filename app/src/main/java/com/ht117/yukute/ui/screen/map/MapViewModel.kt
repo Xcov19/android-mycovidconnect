@@ -2,8 +2,8 @@ package com.ht117.yukute.ui.screen.map
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ht117.domain.location.LocationDataSource
-import com.ht117.domain.location.model.LocationModel
+import com.ht117.yukute.location.LocationDataSource
+import com.ht117.yukute.location.model.LocationModel
 import com.ht117.yukute.ui.screen.base.BaseViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

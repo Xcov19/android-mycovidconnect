@@ -1,6 +1,6 @@
-package com.ht117.domain.location
+package com.ht117.yukute.location
 
-import com.ht117.domain.location.model.LocationModel
+import com.ht117.yukute.location.model.LocationModel
 
 
 interface LocationDataSource {

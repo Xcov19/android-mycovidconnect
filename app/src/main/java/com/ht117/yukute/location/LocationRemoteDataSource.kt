@@ -1,9 +1,8 @@
-package com.ht117.data.location
+package com.ht117.yukute.location
 
 import android.annotation.SuppressLint
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.ht117.domain.location.LocationDataSource
-import com.ht117.domain.location.model.LocationModel
+import com.ht117.yukute.location.model.LocationModel
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
