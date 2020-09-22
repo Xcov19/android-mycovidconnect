@@ -11,8 +11,8 @@ class LocationLocalDataSource(val prefs: SharedPreferences) : LocationDataSource
 
     override suspend fun getLocation(): LocationModel? {
 
-        val lat = prefs.getString(KEY_LAT, "NaN")
-        val lon = prefs.getString(KEY_LON, "NaN")
+        val lat = prefs.getString(KEY_LAT, "0")
+        val lon = prefs.getString(KEY_LON, "0")
 
         return try {
             LocationModel(lat?.toDouble()!!, lon?.toDouble()!!)
