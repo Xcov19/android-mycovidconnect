@@ -5,10 +5,16 @@ import androidx.room.Room
 import com.google.gson.GsonBuilder
 import com.ht117.yukute.BuildConfig
 import com.ht117.yukute.data.local.Database
+import com.ht117.yukute.data.local.LocationLocalDataSource
+import com.ht117.yukute.data.remote.LocationRemoteDataSource
 import com.ht117.yukute.data.remote.api.YakuteAPI
 import com.ht117.yukute.data.remote.interceptor.AuthInterceptor
+import com.ht117.yukute.repository.LocationRepository
 import com.ht117.yukute.repository.UserRepository
 import com.ht117.yukute.settings.Settings
+import com.ht117.yukute.ui.screen.landing.LandingViewModel
+import com.ht117.yukute.ui.screen.login.LoginViewModel
+import com.ht117.yukute.ui.screen.map.MapViewModel
 import com.ht117.yukute.ui.viewmodel.UserViewModel
 import com.ht117.yukute.utils.Constants
 import okhttp3.OkHttpClient
@@ -84,15 +90,24 @@ private val daoModule: Module = module {
     single { get<Database>().userDao() }
 }
 
+private val dataModule: Module = module {
+    single { LocationLocalDataSource(get()) }
+    single { LocationRemoteDataSource(get()) }
+}
+
 private val repositoryModule: Module = module {
     single { UserRepository(get()) }
+    single { LocationRepository(get(), get()) }
 }
 
 private val viewModelModule: Module = module {
     viewModel { UserViewModel(get()) }
+    viewModel { LandingViewModel() }
+    viewModel { MapViewModel(get()) }
 }
 
 val appModules: List<Module> = listOf(
+    dataModule,
     networkingModule,
     apiModule,
     databaseModule,

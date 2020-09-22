@@ -1,5 +1,8 @@
-package com.ht117.yukute.location
+package com.ht117.yukute.repository
 
+import com.ht117.yukute.data.LocationDataSource
+import com.ht117.yukute.data.local.LocationLocalDataSource
+import com.ht117.yukute.data.remote.LocationRemoteDataSource
 import com.ht117.yukute.location.model.LocationModel
 
 class LocationRepository(

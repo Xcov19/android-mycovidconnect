@@ -1,4 +1,4 @@
-package com.ht117.yukute.location
+package com.ht117.yukute.data
 
 import com.ht117.yukute.location.model.LocationModel
 

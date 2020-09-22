@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
     id(Deps.Plugins.Application)
     id(Deps.Plugins.KotlinAndroid)
@@ -13,7 +15,7 @@ android {
     android.buildFeatures.viewBinding = true
 
     defaultConfig {
-        applicationId = Deps.App.Id
+        applicationId = "com.ht117.yukute"
         minSdkVersion(Deps.App.minSdk)
         targetSdkVersion(Deps.App.targetSdk)
         versionCode = Deps.App.VersionCode
@@ -35,17 +37,16 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
             resValue("string", "google_maps_key", Deps.Google.ReleaseKey)
         }
 
         getByName("debug") {
             resValue("string", "google_maps_key", Deps.Google.DebugKey)
         }
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
@@ -64,8 +65,8 @@ dependencies {
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
     implementation(Deps.Google.Map)
-    implementation(Deps.Google.Location)
     implementation(Deps.Common.Ssp)
+    implementation(Deps.Google.Location)
 
     implementation(Deps.Room.Room)
     kapt(Deps.Room.RoomCompiler)

@@ -1,6 +1,7 @@
 package com.ht117.yukute.ui.screen.login
 
-import com.ht117.yukute.ui.screen.base.BaseViewModel
+import android.view.View
+import androidx.lifecycle.ViewModel
 
-class LoginViewModel: BaseViewModel() {
+class LoginViewModel: ViewModel() {
 }

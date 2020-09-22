@@ -1,6 +1,7 @@
 package com.ht117.yukute.ui.screen.home
 
-import com.ht117.yukute.ui.screen.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 
-class HomeViewModel: BaseViewModel() {
+
+class HomeViewModel : ViewModel() {
 }
