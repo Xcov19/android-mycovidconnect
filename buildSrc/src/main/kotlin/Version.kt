@@ -24,6 +24,9 @@ object Version {
     const val okhttp = "4.8.1"
     const val loggingInterceptor = "4.8.1"
 
+    // Firebase
+    const val firestore = "21.6.0"
+
     const val Junit = "4.13"
     const val ExtJunit = "1.1.1"
     const val Espresso = "3.2.0"
