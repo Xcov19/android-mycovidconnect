@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "604540107625",
+    "firebase_url": "https://biz-leads-1509126536502.firebaseio.com",
+    "project_id": "biz-leads-1509126536502",
+    "storage_bucket": "biz-leads-1509126536502.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604540107625:android:9f6ba3cb5ab2f038225bf8",
+        "android_client_info": {
+          "package_name": "com.ht117.yukute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604540107625-0r4ih5hbul16vdgejbupabuhdehosiuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnrH-r9Uwf4O4bIAYpfAk--GbPg4tZP7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604540107625-0r4ih5hbul16vdgejbupabuhdehosiuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
