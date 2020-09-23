@@ -1,4 +1,5 @@
 object Deps {
+
     object Plugins {
         const val BuildGradle = "com.android.tools.build:gradle:${Version.buildGradle}"
         const val BuildKotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kt}"
@@ -44,8 +45,6 @@ object Deps {
     }
 
     object Google {
-        const val DebugKey = "AIzaSyDdC8LQejIZ1YCac4ow1QrP7bmDTqcfm_8"
-        const val ReleaseKey = "google_maps_key"
         const val Map = "com.google.android.gms:play-services-maps:17.0.0" // v2
         const val Location = "com.google.android.gms:play-services-location:17.0.0" // v2
     }

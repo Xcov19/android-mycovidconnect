@@ -19,3 +19,13 @@
 - Leakcanary
 
 ## Git flow
+
+## Setting up maps
+To use google maps you will need to add an api key, in order to do this, create a
+`keys.property` file on your project's root directory and add 2 variables:
+
+`MAPS_API_KEY_DEBUG=""`
+`MAPS_API_KEY_RELEASE=""`
+
+Assign the value of the api for your debug and release builds respectively
+

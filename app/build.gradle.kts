@@ -1,4 +1,6 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+import org.jetbrains.kotlin.konan.properties.loadProperties
 
 plugins {
     id(Deps.Plugins.Application)
@@ -34,6 +36,11 @@ android {
         jvmTarget = "1.8"
     }
 
+    val keys = loadProperties(rootProject.file("keys.properties").absolutePath)
+    val mapsDebug = keys.getProperty("MAPS_API_KEY_DEBUG")
+    val mapsRelease = keys.getProperty("MAPS_API_KEY_RELEASE")
+
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -41,11 +48,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            resValue("string", "google_maps_key", Deps.Google.ReleaseKey)
+            resValue("string", "google_maps_key", mapsRelease)
         }
 
         getByName("debug") {
-            resValue("string", "google_maps_key", Deps.Google.DebugKey)
+            resValue("string", "google_maps_key", mapsDebug)
         }
     }
 }
