@@ -1,4 +1,5 @@
 object Deps {
+
     object Plugins {
         const val BuildGradle = "com.android.tools.build:gradle:${Version.buildGradle}"
         const val BuildKotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kt}"
@@ -12,12 +13,14 @@ object Deps {
     }
 
     object App {
+        const val Id = "com.social.xteam"
         const val minSdk = 23
         const val compileSdk = 30
         const val targetSdk = 30
         const val buildTools = "30.0.0"
         const val VersionCode = 1
         const val VersionName = "1.0"
+        const val Name = "XCovid"
     }
 
     object Kt {
@@ -41,6 +44,15 @@ object Deps {
         const val Prefs = "androidx.preference:preference-ktx:${Version.Prefs}"
     }
 
+    object Google {
+        const val Map = "com.google.android.gms:play-services-maps:17.0.0" // v2
+        const val Location = "com.google.android.gms:play-services-location:17.0.0" // v2
+    }
+
+    object Firebase {
+        const val FireStore = "com.google.firebase:firebase-firestore-ktx:21.5.0"
+    }
+
     object Common {
         val FileTree = mapOf("dir" to "libs", "include" to listOf("*.jar"))
         const val timber = "com.jakewharton.timber:timber:${Version.Timber}"
@@ -49,6 +61,9 @@ object Deps {
 
         // Firebase
         const val crashlytics = "com.google.firebase:firebase-crashlytics:${Version.crashlytics}"
+        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:${Version.LeakCanary}"
+        const val Timber = "com.jakewharton.timber:timber:${Version.Timber}"
+        const val Ssp = "com.intuit.ssp:ssp-android:1.0.6"
     }
 
     object Koin {

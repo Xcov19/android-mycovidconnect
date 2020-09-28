@@ -1,3 +1,7 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+import org.jetbrains.kotlin.konan.properties.loadProperties
+
 plugins {
     id(Deps.Plugins.Application)
     id(Deps.Plugins.KotlinAndroid)
@@ -20,6 +24,7 @@ android {
         versionName = Deps.App.VersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        resValue("string", "app_name", Deps.App.Name)
     }
 
     compileOptions {
@@ -37,6 +42,13 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
+            )
+            resValue("string", "google_maps_key", project.property("mapsRelease") as String?
+            )
+        }
+
+        getByName("debug") {
+            resValue("string", "google_maps_key", project.property("mapsDebug") as String?
             )
         }
     }
@@ -56,6 +68,9 @@ dependencies {
 
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
+    implementation(Deps.Google.Map)
+    implementation(Deps.Common.Ssp)
+    implementation(Deps.Google.Location)
 
     implementation(Deps.Room.Room)
     kapt(Deps.Room.RoomCompiler)
