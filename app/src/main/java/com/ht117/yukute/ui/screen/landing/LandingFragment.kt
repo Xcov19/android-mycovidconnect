@@ -2,9 +2,7 @@ package com.ht117.yukute.ui.screen.landing
 
 import android.Manifest
 import android.os.Bundle
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuInflater
+import android.view.*
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
@@ -29,32 +27,13 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing), IView<LandingSt
 
     private val viewModel: LandingViewModel by viewModel()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun initView() {
         super.initView()
-
-        val popupMenu = PopupMenu(requireContext(), toolbar, Gravity.BOTTOM or Gravity.RIGHT)
-        popupMenu.inflate(R.menu.landing)
-        popupMenu.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.about -> {
-                    navigateTo(R.id.about)
-                }
-                R.id.faqs -> {
-                    navigateTo(R.id.faqs)
-                }
-                R.id.get_started -> {
-                    navigateTo(R.id.get_started)
-                }
-                R.id.contact -> {
-                    navigateTo(R.id.contact)
-                }
-            }
-            true
-        }
-
-        ivBurger.setOnClickListener {
-            popupMenu.show()
-        }
 
         btnSos.setOnClickListener {
             if (requireContext().hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
@@ -87,6 +66,10 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing), IView<LandingSt
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.landing, menu)
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -94,7 +77,7 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing), IView<LandingSt
     ) {
         if (requestCode == LOC_REQ) {
             if (grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
-                // TODO ok
+                btnSos.performClick()
             } else {
                 if (shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
                     showRationaleDialog()

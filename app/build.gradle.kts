@@ -1,15 +1,23 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+import org.jetbrains.kotlin.konan.properties.loadProperties
+
 plugins {
     id(Deps.Plugins.Application)
     id(Deps.Plugins.KotlinAndroid)
     id(Deps.Plugins.KotlinExt)
+    id(Deps.Plugins.kapt)
 }
 
 android {
     compileSdkVersion(Deps.App.compileSdk)
     buildToolsVersion(Deps.App.buildTools)
 
+    android.buildFeatures.dataBinding = true
+    android.buildFeatures.viewBinding = true
+
     defaultConfig {
-        applicationId = Deps.App.Id
+        applicationId = "com.ht117.yukute"
         minSdkVersion(Deps.App.minSdk)
         targetSdkVersion(Deps.App.targetSdk)
         versionCode = Deps.App.VersionCode
@@ -19,20 +27,39 @@ android {
         resValue("string", "app_name", Deps.App.Name)
     }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            resValue("string", "google_maps_key", Deps.Google.ReleaseKey)
-        }
-
-        getByName("debug") {
-            resValue("string", "google_maps_key", Deps.Google.DebugKey)
-        }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    val keys = loadProperties(rootProject.file("keys.properties").absolutePath)
+    val mapsDebug = keys.getProperty("MAPS_API_KEY_DEBUG")
+    val mapsRelease = keys.getProperty("MAPS_API_KEY_RELEASE")
+
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            resValue("string", "google_maps_key", mapsRelease)
+        }
+
+        getByName("debug") {
+            resValue("string", "google_maps_key", mapsDebug)
+        }
+    }
+}
+
+kapt {
+    arguments {
+        arg("room.incremental", "true")
     }
 }
 
@@ -45,11 +72,22 @@ dependencies {
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
     implementation(Deps.Google.Map)
-    implementation(Deps.Google.Location)
     implementation(Deps.Common.Ssp)
+    implementation(Deps.Google.Location)
 
-    implementation(project(":data"))
-    debugImplementation(Deps.Common.LeakCanary)
+    implementation(Deps.Room.Room)
+    kapt(Deps.Room.RoomCompiler)
+    implementation(Deps.Room.RoomRuntime)
+
+    implementation(Deps.Common.leakCanary)
+    implementation(Deps.Common.stetho)
+    implementation(Deps.Common.timber)
+    implementation(Deps.Common.crashlytics)
+
+    implementation(Deps.Network.retrofit)
+    implementation(Deps.Network.ohttp)
+    implementation(Deps.Network.loggingInterceptor)
+    implementation(Deps.Network.gson)
 
     testImplementation(Deps.Test.JUnit4)
     androidTestImplementation(Deps.Test.ExtJunit)

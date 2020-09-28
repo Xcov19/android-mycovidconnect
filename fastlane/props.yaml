@@ -1,0 +1,8 @@
+configurations:
+  - name: dev
+    version_name: 1.0.0
+    version_code: 1
+    app_identifier: com.ht117.yukute
+    app_name: Yukute
+    task_build: assembleDebug
+    task_unittest: assembleDebugUnitTest

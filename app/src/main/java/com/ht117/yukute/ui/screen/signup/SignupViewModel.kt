@@ -1,6 +1,6 @@
 package com.ht117.yukute.ui.screen.signup
 
-import com.ht117.yukute.ui.screen.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 
-class SignupViewModel: BaseViewModel() {
+class SignupViewModel: ViewModel() {
 }

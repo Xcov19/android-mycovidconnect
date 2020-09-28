@@ -2,6 +2,7 @@ package com.ht117.yukute.ui.screen.map
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -10,7 +11,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.ht117.domain.location.model.LocationModel
+import com.ht117.yukute.location.model.LocationModel
 import com.ht117.yukute.R
 import com.ht117.yukute.ui.screen.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_map.*

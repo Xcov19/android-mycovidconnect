@@ -1,67 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@mipmap/bg_landing">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        android:elevation="@dimen/_12ssp"
-        android:background="@color/white"
-        style="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/ivLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_4ssp"
-                android:layout_marginBottom="@dimen/_4ssp"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_centerInParent="true"/>
-
-            <ImageView
-                android:id="@+id/ivBurger"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_burger"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"/>
-
-        </RelativeLayout>
-
-    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/tvTitle"
+        style="@style/CovidTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_16ssp"
-        style="@style/CovidTitle"
-        android:text="@string/app_name"/>
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnSos"
         android:layout_width="320dp"
         android:layout_height="320dp"
-        android:orientation="vertical"
         android:background="@drawable/round_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintBottom_toTopOf="@id/clBottom"
+        android:orientation="vertical"
+        android:text="@string/sos"
         android:textColor="@color/white"
         android:textSize="@dimen/_48ssp"
-        android:text="@string/sos">
+        app:layout_constraintBottom_toTopOf="@id/clBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
         <TextView
             android:id="@+id/tvSos"
@@ -70,28 +40,28 @@
             android:text="@string/sos"
             android:textColor="@color/white"
             android:textSize="@dimen/_32ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tvFind"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintVertical_chainStyle="spread"/>
+            app:layout_constraintVertical_chainStyle="spread" />
 
         <TextView
             android:id="@+id/tvFind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tvSos"
+            android:gravity="center"
             android:text="@string/find_hospital"
             android:textColor="@color/white"
             android:textSize="@dimen/_28ssp"
-            android:layout_below="@id/tvSos"
-            android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSos"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias=".5"
-            app:layout_constraintHorizontal_chainStyle="spread"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSos"
+            app:layout_constraintVertical_bias=".5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -108,36 +78,36 @@
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_8ssp"
             android:layout_marginBottom="@dimen/_8ssp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:background="@color/white"
-            android:orientation="vertical"/>
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/btnLogin"
+            style="@style/CovidButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            style="@style/CovidButton"
             android:gravity="center"
-            android:text="@string/login"/>
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/btnSignup"
+            style="@style/CovidButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            style="@style/CovidButton"
             android:gravity="center"
-            android:text="@string/signup"/>
+            android:text="@string/signup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/center"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

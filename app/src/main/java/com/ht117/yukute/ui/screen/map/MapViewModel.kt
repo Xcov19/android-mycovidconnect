@@ -2,23 +2,25 @@ package com.ht117.yukute.ui.screen.map
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ht117.domain.location.LocationDataSource
-import com.ht117.domain.location.model.LocationModel
-import com.ht117.yukute.ui.screen.base.BaseViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.ht117.yukute.data.LocationDataSource
+import com.ht117.yukute.location.model.LocationModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MapViewModel(private val locationRepository: LocationDataSource) : BaseViewModel() {
+class MapViewModel(private val locationRepository: LocationDataSource) : ViewModel() {
 
     private val _currentLocation = MutableLiveData<LocationModel>()
     val currentLocation: LiveData<LocationModel>
         get() = _currentLocation
 
     fun initMap() {
-        io.launch {
+        viewModelScope.launch {
             val currentLocation = locationRepository.getLocation()
 
-            withContext(ui.coroutineContext) {
+            withContext(Dispatchers.Main) {
                 _currentLocation.postValue(currentLocation)
             }
         }
