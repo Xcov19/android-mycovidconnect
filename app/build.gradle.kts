@@ -36,11 +36,6 @@ android {
         jvmTarget = "1.8"
     }
 
-    val keys = loadProperties(rootProject.file("keys.properties").absolutePath)
-    val mapsDebug = keys.getProperty("MAPS_API_KEY_DEBUG")
-    val mapsRelease = keys.getProperty("MAPS_API_KEY_RELEASE")
-
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -48,11 +43,13 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            resValue("string", "google_maps_key", mapsRelease)
+            resValue("string", "google_maps_key", project.property("mapsRelease") as String?
+            )
         }
 
         getByName("debug") {
-            resValue("string", "google_maps_key", mapsDebug)
+            resValue("string", "google_maps_key", project.property("mapsDebug") as String?
+            )
         }
     }
 }
