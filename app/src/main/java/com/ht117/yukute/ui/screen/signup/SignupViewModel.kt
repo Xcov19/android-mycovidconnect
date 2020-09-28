@@ -7,3 +7,4 @@ class SignupViewModel : ViewModel() {
     // TODO - Remove linter warning
     fun demo() = run { // this will do nothing }
     }
+}
