@@ -2,15 +2,11 @@ package com.ht117.yukute.ui.screen.landing
 
 import android.Manifest
 import android.os.Bundle
-import android.view.*
-import androidx.appcompat.widget.PopupMenu
-import androidx.core.content.ContextCompat
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.core.content.PermissionChecker
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
 import com.ht117.yukute.R
 import com.ht117.yukute.ui.hasPermission
 import com.ht117.yukute.ui.screen.base.*
@@ -99,9 +95,7 @@ class LandingFragment : BaseFragment(R.layout.fragment_landing), IView<LandingSt
     }
 
     override fun render(state: LandingState) {
-        when (state) {
 
-        }
     }
 
 }

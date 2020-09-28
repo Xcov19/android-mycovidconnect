@@ -4,4 +4,6 @@ import com.ht117.yukute.R
 import com.ht117.yukute.ui.screen.base.BaseFragment
 
 class GetStartedFragment: BaseFragment(R.layout.fragment_get_started) {
+
+    // TODO - Remove linter warning
 }

@@ -30,6 +30,6 @@ class LandingViewModel: ViewModel(), IModel<LandingState, LandingAction> {
     }
 
     private suspend fun checkUserAuthorize() {
-
+        // TODO :: This is empty - fix linter warning
     }
 }
