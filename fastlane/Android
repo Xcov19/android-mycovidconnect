@@ -56,6 +56,7 @@ def read_gradle_properties(env)
         "versionName" =>  ENV["APP_VERSION_NAME"] != nil ? ENV["APP_VERSION_NAME"] : @configuration['version_name'],
         "versionCode" => ENV["APP_VERSION_CODE"] != nil ? ENV["APP_VERSION_CODE"] : @configuration['version_code'],
         "mapsDebug" => ENV["MAPS_DEBUG_KEY"] != nil ? ENV["MAPS_DEBUG_KEY"] : @configuration['mapsDebug'],
+        "mapsRelease" => ENV["MAPS_RELEASE_KEY"] != nil ? ENV["MAPS_RELEASE_KEY"] : @configuration['mapsRelease'],
         "appLabel" => @configuration['app_name'],
     }
 
