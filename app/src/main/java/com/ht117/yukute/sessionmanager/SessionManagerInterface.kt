@@ -6,4 +6,6 @@ package com.ht117.yukute.sessionmanager
 interface SessionManagerInterface {
 
     fun isValidSession(): Boolean
+
+    fun setLastAccess()
 }

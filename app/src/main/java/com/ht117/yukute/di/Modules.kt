@@ -8,6 +8,7 @@ import com.ht117.yukute.data.local.Database
 import com.ht117.yukute.data.remote.api.YakuteAPI
 import com.ht117.yukute.data.remote.interceptor.AuthInterceptor
 import com.ht117.yukute.repository.UserRepository
+import com.ht117.yukute.sessionmanager.SessionManager
 import com.ht117.yukute.settings.Settings
 import com.ht117.yukute.ui.viewmodel.UserViewModel
 import com.ht117.yukute.utils.Constants
@@ -68,6 +69,10 @@ val settingsModule: Module = module {
     single {
         Settings(get())
     }
+
+    single {
+        SessionManager(get())
+    }
 }
 
 private val databaseModule: Module = module {
@@ -98,5 +103,6 @@ val appModules: List<Module> = listOf(
     databaseModule,
     daoModule,
     repositoryModule,
-    viewModelModule
+    viewModelModule,
+    settingsModule
 )

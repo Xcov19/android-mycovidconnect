@@ -1,4 +1,5 @@
 object Version {
+    const val Mockito="1.10.19"
     const val kt = "1.3.72"
     const val buildGradle = "4.0.1"
 

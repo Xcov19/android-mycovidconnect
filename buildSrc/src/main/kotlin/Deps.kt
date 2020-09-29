@@ -76,5 +76,6 @@ object Deps {
         const val ExtJunit = "androidx.test.ext:junit:${Version.ExtJunit}"
         const val Espresso = "androidx.test.espresso:espresso-core:${Version.Espresso}"
         const val Koin = "org.koin:koin-test:${Version.Koin}"
+        const val Mockito = "org.mockito:mockito-core:${Version.Mockito}"
     }
 }

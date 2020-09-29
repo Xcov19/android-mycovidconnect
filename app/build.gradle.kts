@@ -56,6 +56,9 @@ dependencies {
 
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
+    testImplementation(Deps.Test.Koin)
+
+    testImplementation(Deps.Test.Mockito)
 
     implementation(Deps.Room.Room)
     kapt(Deps.Room.RoomCompiler)
