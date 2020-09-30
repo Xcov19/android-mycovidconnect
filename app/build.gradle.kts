@@ -7,6 +7,7 @@ plugins {
     id(Deps.Plugins.KotlinAndroid)
     id(Deps.Plugins.KotlinExt)
     id(Deps.Plugins.kapt)
+    id(Deps.Plugins.googleServices)
 }
 
 android {
@@ -85,6 +86,8 @@ dependencies {
     implementation(Deps.Network.ohttp)
     implementation(Deps.Network.loggingInterceptor)
     implementation(Deps.Network.gson)
+
+    implementation(Deps.Firebase.firestore)
 
     testImplementation(Deps.Test.JUnit4)
     androidTestImplementation(Deps.Test.ExtJunit)

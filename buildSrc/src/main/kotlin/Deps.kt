@@ -3,6 +3,7 @@ object Deps {
     object Plugins {
         const val BuildGradle = "com.android.tools.build:gradle:${Version.buildGradle}"
         const val BuildKotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kt}"
+        const val googleServicesClasspath = "com.google.gms:google-services:4.3.3"
         const val Application = "com.android.application"
         const val Library = "com.android.library"
         const val KotlinAndroid = "kotlin-android"
@@ -10,6 +11,7 @@ object Deps {
         const val kapt = "kotlin-kapt"
         const val JavaLib = "java-library"
         const val Kotlin = "kotlin"
+        const val googleServices = "com.google.gms.google-services"
     }
 
     object App {
@@ -84,6 +86,10 @@ object Deps {
         const val ohttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
         const val loggingInterceptor =
             "com.squareup.okhttp3:logging-interceptor:${Version.loggingInterceptor}"
+    }
+
+    object Firebase {
+        const val firestore = "com.google.firebase:firebase-firestore-ktx:${Version.firestore}"
     }
 
     object Test {
