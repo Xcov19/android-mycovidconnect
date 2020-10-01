@@ -1,7 +1,15 @@
 name: ktlint
 
 on:
+  push:
+    branches:
+      - "*"
+    paths:
+      - "**/*.kt"
+      - ".github/workflows/ktlinter.yml"
   pull_request:
+    branches:
+      - "*"
     paths:
       - "**/*.kt"
       - ".github/workflows/ktlinter.yml"

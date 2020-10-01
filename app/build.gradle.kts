@@ -3,6 +3,7 @@ plugins {
     id(Deps.Plugins.KotlinAndroid)
     id(Deps.Plugins.KotlinExt)
     id(Deps.Plugins.kapt)
+    id(Deps.Plugins.googleServices)
 }
 
 android {
@@ -20,6 +21,7 @@ android {
         versionName = Deps.App.VersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        resValue("string", "app_name", Deps.App.Name)
     }
 
     compileOptions {
@@ -37,6 +39,13 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
+            )
+            resValue("string", "google_maps_key", project.property("mapsRelease") as String?
+            )
+        }
+
+        getByName("debug") {
+            resValue("string", "google_maps_key", project.property("mapsDebug") as String?
             )
         }
     }
@@ -56,6 +65,9 @@ dependencies {
 
     implementation(Deps.Koin.Scope)
     implementation(Deps.Koin.ViewModel)
+    implementation(Deps.Google.Map)
+    implementation(Deps.Common.Ssp)
+    implementation(Deps.Google.Location)
 
     implementation(Deps.Room.Room)
     kapt(Deps.Room.RoomCompiler)
@@ -70,6 +82,8 @@ dependencies {
     implementation(Deps.Network.ohttp)
     implementation(Deps.Network.loggingInterceptor)
     implementation(Deps.Network.gson)
+
+    implementation(Deps.Firebase.FireStore)
 
     testImplementation(Deps.Test.JUnit4)
     androidTestImplementation(Deps.Test.ExtJunit)

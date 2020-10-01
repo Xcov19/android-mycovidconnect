@@ -5,34 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tvText"
-        android:layout_width="120dp"
+    <Button
+        android:id="@+id/btnSos"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="123"
+        android:text="Sos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <Button
-        android:id="@+id/btnNext"
-        android:text="Next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvText"/>
-
-    <Button
-        android:id="@+id/btnDetail"
-        android:text="Detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnNext"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
