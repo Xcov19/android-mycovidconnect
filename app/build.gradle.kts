@@ -1,7 +1,3 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-import org.jetbrains.kotlin.konan.properties.loadProperties
-
 plugins {
     id(Deps.Plugins.Application)
     id(Deps.Plugins.KotlinAndroid)
@@ -87,7 +83,7 @@ dependencies {
     implementation(Deps.Network.loggingInterceptor)
     implementation(Deps.Network.gson)
 
-    implementation(Deps.Firebase.firestore)
+    implementation(Deps.Firebase.FireStore)
 
     testImplementation(Deps.Test.JUnit4)
     androidTestImplementation(Deps.Test.ExtJunit)

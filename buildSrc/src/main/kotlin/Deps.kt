@@ -88,10 +88,6 @@ object Deps {
             "com.squareup.okhttp3:logging-interceptor:${Version.loggingInterceptor}"
     }
 
-    object Firebase {
-        const val firestore = "com.google.firebase:firebase-firestore-ktx:${Version.firestore}"
-    }
-
     object Test {
         const val JUnit4 = "junit:junit:${Version.Junit}"
         const val ExtJunit = "androidx.test.ext:junit:${Version.ExtJunit}"
