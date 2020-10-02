@@ -6,6 +6,8 @@
 - Clean architecture
 - MVVM - MVI
 
+  <img src="https://github.com/SanushRadalage/android-mycovidconnect/blob/develop/mvvm-architecture-pattern.png">
+
 ## Build script
 - Kotlin Dsl
 
